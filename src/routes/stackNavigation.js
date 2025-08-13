@@ -4,16 +4,25 @@ import Login from '../screens/Login';
 import CadUsuario from '../screens/CadUsuario';
 import EsqSenha from '../screens/EsqSenha';
 import Home from '../screens/Home';
+import { HeaderShownContext } from '@react-navigation/elements';
 
 const Stack = createNativeStackNavigator();
 
 export default function Tab() {
     return (
-        <Stack.Navigator>
+        <Stack.Navigator                 
+            // screenOptions={{
+            //     headerShown: false,
+            // }}
+        >
             <Stack.Screen name="Login" component={Login} />
             <Stack.Screen name="CadUsuario" component={CadUsuario} />
             <Stack.Screen name="EsqSenha" component={EsqSenha} />
-            <Stack.Screen name="Home" component={Home} />
+            <Stack.Screen 
+                name="Home" 
+                component={Home} 
+                options={{ headerShown: false }}                
+            />
         </Stack.Navigator>
     );
 };
