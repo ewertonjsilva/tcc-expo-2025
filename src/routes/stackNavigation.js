@@ -1,27 +1,30 @@
-import { createNativeStackNavigator } from '@react-navigation/native-stack'; 
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import Login from '../screens/Login';
 import CadUsuario from '../screens/CadUsuario';
 import EsqSenha from '../screens/EsqSenha';
 import Home from '../screens/Home';
-import { HeaderShownContext } from '@react-navigation/elements';
 
 const Stack = createNativeStackNavigator();
 
 export default function Tab() {
     return (
-        <Stack.Navigator                 
-            // screenOptions={{
-            //     headerShown: false,
-            // }}
+        <Stack.Navigator
+        // screenOptions={{
+        //     headerShown: false,
+        // }}
         >
             <Stack.Screen name="Login" component={Login} />
             <Stack.Screen name="CadUsuario" component={CadUsuario} />
             <Stack.Screen name="EsqSenha" component={EsqSenha} />
-            <Stack.Screen 
-                name="Home" 
-                component={Home} 
-                options={{ headerShown: false }}                
+            <Stack.Screen
+                name="Home"
+                component={Home}
+                options={{
+                    headerShown: false,
+                    headerBackVisible: false, // remove o botão de voltar do header
+                    gestureEnabled: false,    // desativa gesto de swipe para voltar (iOS) 
+                }}
             />
         </Stack.Navigator>
     );
