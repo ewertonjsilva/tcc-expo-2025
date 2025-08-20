@@ -21,7 +21,7 @@ export default function Login() {
 
     function Acesso() {
         if (usuTemp.email === email && usuTemp.senha === senha) {
-            navigation.navigate('Home', {usuTemp});
+            navigation.navigate('BottonTab', {usuTemp});
         } else {
             Alert.alert('Erro!', 'E-mail e/ou senha inválido!',
                 [{ text: 'OK', onPress: () => console.log('OK Pressed') },]);

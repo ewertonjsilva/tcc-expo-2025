@@ -3,7 +3,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Login from '../screens/Login';
 import CadUsuario from '../screens/CadUsuario';
 import EsqSenha from '../screens/EsqSenha';
-import Home from '../screens/Home';
+import Home from '../screens/Home'; 
+import BottonTab from './bottonTab';
 
 const Stack = createNativeStackNavigator();
 
@@ -18,8 +19,8 @@ export default function Tab() {
             <Stack.Screen name="CadUsuario" component={CadUsuario} />
             <Stack.Screen name="EsqSenha" component={EsqSenha} />
             <Stack.Screen
-                name="Home"
-                component={Home}
+                name="BottonTab"
+                component={BottonTab}
                 options={{
                     headerShown: false,
                     headerBackVisible: false, // remove o botão de voltar do header
