@@ -7,10 +7,13 @@ import PerfilUsuario from '../screens/PerfilUsuario';
 
 const Tab = createBottomTabNavigator(); 
 
-export default function BottonTab() {
+export default function BottonTab({route}) { 
+
+  const { usuTemp } = route.params;
+
   return (
     <Tab.Navigator>
-      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="Home" component={Home} initialParams={{ usuTemp }} />
       <Tab.Screen name="Produtos" component={Produtos} />
       <Tab.Screen name="Carrinho" component={Carrinho} />
       <Tab.Screen name="PerfilUsuario" component={PerfilUsuario} />
